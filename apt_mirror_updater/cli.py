@@ -131,7 +131,7 @@ def main():
             elif option in ('-c', '--change-mirror'):
                 actions.append(functools.partial(updater.change_mirror, value))
             elif option in ('-a', '--auto-change-mirror'):
-                actions.append(updater.change_mirror)
+                actions.append(functools.partial(updater.change_mirror, None, update=False))
             elif option in ('-u', '--update', '--update-package-lists'):
                 actions.append(updater.smart_update)
             elif option in ('-x', '--exclude'):

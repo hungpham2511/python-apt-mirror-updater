@@ -153,6 +153,7 @@ def discover_mirrors():
                     timer, pluralize(len(mirrors), "mirror"))
         mirrors = fast_mirrors
     else:
+        logger.warning("Too few fast mirrors discovered! Use the full list of mirrors.")
         logger.info("Discovered %s in %s.", pluralize(len(mirrors), "Ubuntu mirror"), timer)
     return mirrors
 

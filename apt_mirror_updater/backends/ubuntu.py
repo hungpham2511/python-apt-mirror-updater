@@ -146,7 +146,7 @@ def discover_mirrors():
     selected_mirrors = discover_mirror_selection()
     slow_mirrors = mirrors ^ selected_mirrors
     fast_mirrors = mirrors ^ slow_mirrors
-    if len(fast_mirrors) > 10:
+    if len(fast_mirrors) > 5:
         # Narrow down the list of candidate mirrors to fast mirrors.
         logger.info("Discovered %s in %s (narrowed down from %s).",
                     pluralize(len(fast_mirrors), "Ubuntu mirror"),
